@@ -1,0 +1,223 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'LOTTERIACHAB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{margin: 0; padding: 0;}
+
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/*상단 내비게이션바 스타일*/
+header {
+  padding: 0 10px;
+  border-bottom: 0.5px solid gainsboro;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+a, .search-button, .search-input::placeholder {
+  color: #868e96;
+}
+
+.search-bar, .search-input {
+  background-color: #f2f2f2;
+}
+
+.logo {
+  margin: 10px;
+  color: rgb(255, 75, 75);
+  font-size: 24px;
+  font-family: 'LOTTERIACHAB';
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.search-bar {
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+}  
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-button {
+  border: none;
+  background: none;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+.user-name {
+  color: black;
+}
+
+.user-profile-img {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid gainsboro;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/*테마 스타일*/
+.theme-toggle {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.dark-theme, .light-theme {
+  width: 20px;
+  height: 20px;
+}
+
+body:not(.dark-mode) .dark-theme,
+body.dark-mode .light-theme {
+  display: none;
+}
+
+
+/*다크 테마 스타일*/
+body.dark-mode {
+  background-color: #212529;
+  color: white;
+}
+
+body.dark-mode .logo {
+  color: rgb(255, 75, 75);
+}
+
+body.dark-mode header,
+body.dark-mode aside {
+  border-color: #30353b;
+  background-color: #212529;
+}
+
+body.dark-mode .search-input {
+  background: none;
+  color:#C2C2C7;
+}
+
+body.dark-mode .search-bar, 
+body.dark-mode .search-input::placeholder,
+body.dark-mode .search-button,
+body.dark-mode .theme-toggle {
+  background-color: #30353b;
+  color: #C2C2C7;
+}
+
+body.dark-mode .user-name {
+  color: #C2C2C7;
+}
+
+body.dark-mode .user-profile-img {
+  border: 1.5px solid #C2C2C7;
+}
+
+body.dark-mode .side-nav a:hover {
+  border-radius: 5px;
+  background-color: #30353b85;
+}
+
+body.dark-mode .side-nav a.active,
+body.dark-mode .side-nav .active:hover {
+  border-radius: 5px;
+  background-color: #30353b;
+  color: white;
+}
+
+
+/*사이드 내비게이션바 스타일*/
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+aside {
+  width: 13%;
+  border-right: 0.5px solid gainsboro;
+  font-size: 16px;
+}
+
+.side-nav {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.side-nav a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.side-nav a:hover {
+  border-radius: 5px;
+  background-color: rgba(255, 75, 75, 0.089);
+}
+
+.side-nav a.active, .side-nav a.active:hover {
+  border-radius: 5px;
+  background-color: rgba(255, 75, 75, 0.25);
+  color: black;
+}
+
+
+/*메인 페이지*/
+main {
+  width: 87%;
+}
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+}
