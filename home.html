@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스터디하이브</title>
+  <link rel="stylesheet" href="./css/home.css">
+  <script src="https://kit.fontawesome.com/397f13156b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <a href="./navbar.html" class="logo">STUDY HIVE</a>
+      <div class="container">
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="프로젝트/스터디 찾기">
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <button class="theme-toggle">
+          <img src="./public/light_icon.png" alt="라이트 모드" class="light-theme">
+          <img src="./public/dark_icon.png" alt="다크 모드" class="dark-theme">
+        </button>
+        <div class="user-info">
+          <a href="#" class="user-name">홍길동</a>
+          <img src="./public/profile_img_1.jpg" alt="프로필 사진" class="user-profile-img">
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="main-content">
+    <aside>
+      <nav>
+        <ul class="side-nav">
+          <li><a href="#">홈</a></li>   <!-- 홈 페이지로 이동 -->
+          <li><a href="#">스터디 만들기</a></li>
+          <li><a href="#">프로젝트/스터디 찾기</a></li>
+          <li><a href="#">라운지</a></li>
+          <li><a href="#">마이페이지</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <div class="page-content">
+        <!-- 동적으로 변경될 콘텐츠 -->
+      </div>
+    </main>
+  </div>
+
+  <template id="home-content">
+    <section class="carousel">
+        <div class="slides">
+            <div class="slide"> 
+                <h2>흩어져 있는 스터디 플래너와 프로젝트 모집,<br> 이젠 스터디앤드에서 편하게 모아보세요✨</h2> 
+            </div>
+            <div class="slide"> 
+                <h2>홍보라운지에서<br>자신의 프로젝트를 자랑해보세요📢</h2> 
+            </div>
+            <div class="slide"> 
+                <h2>관련있는 프로젝트를 모아보고<br>맞춤형 양식으로 편리하게 지원하세요🚀</h2> 
+            </div>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+    <!-- 캐러셀 슬라이드 끝 -->
+
+    <div class="sections">
+      <section class="hot-projects">
+        <h2>Hot 스터디/프로젝트 🔥</h2>
+        <div class="project-list">
+          <div class="project-item">
+            <img src="./public/home_img1.jpg" alt="Project 1">
+            <p>알고리즘 문제 해결 스터디</p>
+          </div>
+          <div class="project-item">
+            <img src="./public/home_img2.jpg" alt="Project 2">
+            <p>삼성역 퇴근 후 모각코 종원</p>
+          </div>
+        </div>
+      </section>
+  
+      <section class="new-projects">
+        <h2>New 스터디/프로젝트 ✨</h2>
+        <div class="project-list">
+            <div class="project-item">
+              <img src="./public/home_img3.jpg" alt="Project 1">
+              <p>알고리즘 문제 해결 스터디</p>
+            </div>
+            <div class="project-item">
+              <img src="./public/home_img4.jpg" alt="Project 2">
+              <p>MVP 제작 후 개선을 맡고 싶은 앱 개발자를 구합니다</p>
+            </div>
+          </div>
+      </section>
+    </div>
+  
+    <div class="sections">
+      <section class="notice-board">
+        <h2>게시판</h2>
+        <div class="notice-content">
+            <div class = "notice-item">
+                <p><strong>📌 부산 AI와 기술을 넘어 프로젝트를 고민하는 사람들을 위한, 오프라인 리액트 스터디</strong><br>
+                    창조적 사고를 할 수 있는 SMART한 AI에 대한 이야기를 나눌 오프라인 스터디입니다. React와 UX/UI 경험이 있는 분들에게 적합하며, 개발자와 디자이너 간의 아이디어 교류를 목적으로 합니다.</p>
+            </div>
+            <div class = "notice-item">
+                <p><strong>📌 자바를 이력서에, [무료로] 고려해보세요</strong><br>
+                    웹 개발자 또는 풀스택 개발을 꿈꾸는 분들을 위한 자바 학습 스터디입니다. 개인 프로젝트 발표 경험을 통해 성장을 지원합니다.</p>
+            </div>
+            <div class = "notice-item">
+                <p><strong>📌 학습 관리 서비스(LMS) 개발 및 프론트엔드 팀원 모집합니다</strong><br>
+                    LMS 플랫폼 구축에 대해 관심이 있는 모든 분들을 위한 팀 프로젝트. 경험 유무 관계없이 지원 가능합니다.</p>
+            </div>
+        </div>
+      </section>
+  
+      <section class="lounge">
+        <h2>라운지</h2>
+        <p>커뮤니티와 관련된 컨텐츠를 표시합니다...</p>
+      </section>
+    </div>
+  </template>
+  
+  <script src="./js/home.js"></script>
+</body>
+</html>

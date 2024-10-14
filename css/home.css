@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'LOTTERIACHAB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 상단 내비게이션바 스타일 */
+header {
+  padding: 0 10px;
+  border-bottom: 0.5px solid gainsboro;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a, .search-button, .search-input::placeholder {
+  color: #868e96;
+}
+
+.search-bar, .search-input {
+  background-color: #f2f2f2;
+}
+
+.logo {
+  margin: 10px;
+  color: rgb(255, 75, 75);
+  font-size: 24px;
+  font-family: 'LOTTERIACHAB';
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.search-button {
+  border: none;
+  background: none;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+.user-name {
+  color: black;
+}
+
+.user-profile-img {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid gainsboro;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 테마 스타일 */
+.theme-toggle {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.dark-theme, .light-theme {
+  width: 20px;
+  height: 20px;
+}
+
+body:not(.dark-mode) .dark-theme,
+body.dark-mode .light-theme {
+  display: none;
+}
+
+/* 다크 테마 스타일 */
+body.dark-mode {
+  background-color: #212529;
+  color: white;
+}
+
+body.dark-mode .logo {
+  color: rgb(255, 75, 75);
+}
+
+body.dark-mode header,
+body.dark-mode aside {
+  border-color: #30353b;
+  background-color: #212529;
+}
+
+body.dark-mode .search-input {
+  background: none;
+  color: #C2C2C7;
+}
+
+body.dark-mode .search-bar, 
+body.dark-mode .search-input::placeholder,
+body.dark-mode .search-button,
+body.dark-mode .theme-toggle {
+  background-color: #30353b;
+  color: #C2C2C7;
+}
+
+body.dark-mode .user-name {
+  color: #C2C2C7;
+}
+
+body.dark-mode .user-profile-img {
+  border: 1.5px solid #C2C2C7;
+}
+
+body.dark-mode .side-nav a:hover {
+  border-radius: 5px;
+  background-color: #30353b85;
+}
+
+body.dark-mode .side-nav a.active,
+body.dark-mode .side-nav .active:hover {
+  border-radius: 5px;
+  background-color: #30353b;
+  color: white;
+}
+
+/* 사이드 내비게이션바 스타일 */
+.main-content {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start; /* 컨텐츠를 위쪽에 정렬 */
+}
+
+aside {
+  width: 13%;
+  border-right: 0.5px solid gainsboro;
+  font-size: 16px;
+}
+
+.side-nav {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.side-nav a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.side-nav a:hover {
+  border-radius: 5px;
+  background-color: rgba(255, 75, 75, 0.089);
+}
+
+.side-nav a.active, .side-nav a.active:hover {
+  border-radius: 5px;
+  background-color: rgba(255, 75, 75, 0.25);
+  color: black;
+}
+
+/* 메인 페이지 */
+main {
+  width: 87%;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 빈 공간 없이 위쪽에 정렬 */
+  align-items: center;
+  min-height: 100%; /* 최소 높이를 설정해서 빈 공간을 제거 */
+  padding: 20px;
+  gap: 20px;
+}
+
+/* 캐러셀 스타일 */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 300%; /* 슬라이드 개수에 맞게 설정 */
+}
+
+.slide {
+  flex: 1 0 100%;
+  width: 100%;
+  padding: 60px;
+  text-align: left;
+  color: #333; 
+  background-color: #fdf2ec;
+  box-sizing: border-box;
+  border-radius: inherit;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+/* 프로젝트 섹션 스타일 */
+.hot-projects, .new-projects {
+  margin: 20px;
+  flex: 1;
+}
+
+.notice-board,
+.lounge {
+   width: 50%; /* 게시판과 라운지 각각 너비를 50%로 설정 */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice-content {
+  margin-top: 10px;
+}
+
+.notice-item {
+  background-color: #f3f3f3; /* 게시글 배경을 연한 회색으로 설정 */
+  color: #333; /* 텍스트 색상을 어두운 색상으로 설정 */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.project-list {
+  display: flex;
+  gap: 15px;
+}
+
+.project-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 게시판과 라운지 섹션 조정 */
+.notice-board, .lounge {
+  flex: 1;
+  margin: 20px 0; /* 상하 여백을 설정해 공간 조정 */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* 페이지 콘텐츠 레이아웃 조정 */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between; /* 공간이 일정하게 분배되도록 수정 */
+  width: 100%; /* 전체 너비를 사용 */
+  gap: 20px;
+}
+
+/* 반응형 조정 */
+@media screen and (max-width: 768px) {
+  aside {
+    width: 25%;
+  }
+
+  main {
+    width: 75%;
+  }
+
+  .container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-bar {
+    width: 150px;
+  }
+
+  .slides {
+    width: 200%;
+  }
+
+  .slide {
+    padding: 40px;
+  }
+
+  .project-list {
+    flex-direction: column;
+  }
+}
